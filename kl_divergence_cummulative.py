@@ -13,7 +13,7 @@ def ecdf(x):
     return interpolate_
 
 
-def cumulative_kl(x, y, fraction=0.5):
+def cummulative_kl(x, y, fraction=0.5):
     dx = np.diff(np.sort(np.unique(x)))
     dy = np.diff(np.sort(np.unique(y)))
     ex = np.min(dx)
@@ -22,5 +22,5 @@ def cumulative_kl(x, y, fraction=0.5):
     n = len(x)
     P = ecdf(x)
     Q = ecdf(y)
-    KL = (1./n)*np.sum(np.log((P(x) - P(x-e))/(Q(x) - Q(x-e))))
+    KL = (1.0/n)*np.sum(np.log((P(x) - P(x-e))/(Q(x) - Q(x-e))))
     return KL
