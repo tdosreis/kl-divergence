@@ -13,7 +13,7 @@ def ecdf(x):
     return interpolate_
 
 
-def cummulative_kl(x, y, fraction=0.5):
+def cumulative_kl(x, y, fraction=0.5):
     dx = np.diff(np.sort(np.unique(x)))
     dy = np.diff(np.sort(np.unique(y)))
     ex = np.min(dx)
